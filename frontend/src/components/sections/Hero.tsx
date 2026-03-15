@@ -32,11 +32,11 @@ export function Hero() {
             onChange={(e) => setEmail(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleJoin()}
             placeholder="Enter your email..."
-            className="flex-1 bg-[#141414] border border-white/10 sm:rounded-l-xl rounded-xl sm:rounded-r-none px-5 h-14 text-white placeholder-gray-500 text-sm outline-none focus:border-blue-500 transition-colors"
+            className="w-full sm:flex-1 bg-[#141414] border border-white/10 rounded-xl sm:rounded-r-none px-5 h-14 text-white placeholder-gray-500 text-sm outline-none focus:border-blue-500 transition-colors"
           />
           <button
             onClick={handleJoin}
-            className="bg-blue-600 hover:bg-blue-500 text-white px-8 h-14 sm:rounded-r-xl rounded-xl sm:rounded-l-none text-sm font-semibold transition-colors whitespace-nowrap"
+            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-8 h-14 rounded-xl sm:rounded-l-none text-sm font-semibold transition-colors whitespace-nowrap"
           >
             Join Free →
           </button>
