@@ -25,7 +25,7 @@ const CARDS: LearnCard[] = [
 
 export function LearnSection() {
   return (
-    <section className="max-w-[1400px] mx-auto px-16 py-20">
+    <section className="max-w-[1400px] mx-auto px-4 sm:px-8 md:px-16 py-14 md:py-20">
       <h2 className="text-3xl font-bold mb-2">What You Will Learn</h2>
       <p className="text-gray-500 mb-10">
         Topics built for beginners, explained simply.

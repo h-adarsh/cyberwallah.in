@@ -40,7 +40,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <span className="text-gray-600 text-sm">
             © 2026 CyberWallah. Made with ❤️ in India.
           </span>
