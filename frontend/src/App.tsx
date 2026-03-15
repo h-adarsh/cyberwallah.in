@@ -5,10 +5,10 @@ import Home from "./pages/Home";
 import Quiz from "./pages/Quiz";
 import Contact from "./pages/Contact";
 import Dictionary from "./pages/Dictionary";
+import DictionaryDetail from "./pages/DictionaryDetail";
 import CaseStudies from "./pages/CaseStudies";
-import SecurityExplained from "./pages/SecurityExplained";
-import Join from "./pages/Join";
 import NotFound from "./pages/NotFound";
+import ComingSoon from "./pages/Join";
 
 function RootLayout() {
   return (
@@ -29,11 +29,11 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "quiz", element: <Quiz /> },
-      { path: "join", element: <Join /> },
       { path: "contact-us", element: <Contact /> },
       { path: "dictionary", element: <Dictionary /> },
+      { path: "dictionary/:slug", element: <DictionaryDetail /> },
       { path: "case-studies", element: <CaseStudies /> },
-      { path: "security-explained", element: <SecurityExplained /> },
+      { path: "coming-soon", element: <ComingSoon /> },
       { path: "*", element: <NotFound /> },
     ],
   },

@@ -1,0 +1,509 @@
+[
+  {
+    "term": "Aadhaar Fraud",
+    "slug": "aadhaar-fraud",
+    "letter": "A",
+    "preview": "Misuse of your Aadhaar number to open fake accounts or take loans in your name.",
+    "definition": "Aadhaar fraud involves the misuse of someone's Aadhaar details to commit identity theft, open fake bank accounts, take loans, get SIM cards, or conduct other financial crimes in the victim's name. Fraudsters obtain Aadhaar details through phishing, data breaches, or social engineering.",
+    "example": "Fraudsters used stolen Aadhaar and PAN details to open mule bank accounts and take microfinance loans worth lakhs in victims' names across multiple Indian states.",
+    "tips": [
+      "Lock your Aadhaar biometrics on the UIDAI website or mAadhaar app when not in use.",
+      "Use a masked Aadhaar (shows only last 4 digits) when sharing with third parties.",
+      "Regularly check your Aadhaar authentication history at myaadhaar.uidai.gov.in."
+    ]
+  },
+  {
+    "term": "Antivirus",
+    "slug": "antivirus",
+    "letter": "A",
+    "preview": "Software that detects and removes malicious programs from your device.",
+    "definition": "Antivirus software is a program designed to detect, prevent, and remove malware from your computer or phone. It works by scanning files and comparing them against a database of known threats.",
+    "example": "When you download a suspicious APK file on Android, your antivirus detects it as malware and warns you before it can cause damage.",
+    "tips": [
+      "Keep your antivirus updated at all times.",
+      "Run full scans regularly, at least once a week.",
+      "Don't rely only on antivirus — safe browsing habits matter too."
+    ]
+  },
+  {
+    "term": "Authentication",
+    "slug": "authentication",
+    "letter": "A",
+    "preview": "Verifying who you are before giving access to a system.",
+    "definition": "Authentication is the process of verifying the identity of a user, device, or system before granting access. It ensures that only authorized people can access sensitive information or systems.",
+    "example": "When you log into your bank app using your password + OTP, the bank is authenticating you — confirming you are really who you say you are.",
+    "tips": [
+      "Always use strong, unique passwords for every account.",
+      "Enable two-factor authentication (2FA) wherever possible.",
+      "Never share your OTP with anyone, even if they claim to be from your bank."
+    ]
+  },
+  {
+    "term": "Botnet",
+    "slug": "botnet",
+    "letter": "B",
+    "preview": "A network of infected computers controlled by a hacker remotely.",
+    "definition": "A botnet is a collection of internet-connected devices that have been infected with malware and are being controlled by a hacker without the device owners knowing. These devices are used to carry out attacks like DDoS or send spam.",
+    "example": "Your home computer could be part of a botnet without you knowing — secretly sending thousands of spam emails while you sleep.",
+    "tips": [
+      "Keep your operating system and software updated.",
+      "Use a firewall to monitor outgoing traffic.",
+      "Run regular malware scans to detect bot infections early."
+    ]
+  },
+  {
+    "term": "Brute Force Attack",
+    "slug": "brute-force-attack",
+    "letter": "B",
+    "preview": "Trying every possible password combination until the right one is found.",
+    "definition": "A brute force attack is a trial-and-error method used by hackers to crack passwords or encryption keys by systematically trying every possible combination until they find the correct one.",
+    "example": "A hacker trying millions of password combinations like 'password1', 'password2', '123456' etc. to break into your email account.",
+    "tips": [
+      "Use long passwords with a mix of letters, numbers, and symbols.",
+      "Enable account lockout after a few failed attempts.",
+      "Use a password manager to create and store complex passwords."
+    ]
+  },
+  {
+    "term": "Cookie",
+    "slug": "cookie",
+    "letter": "C",
+    "preview": "Small data files websites store on your browser to remember you.",
+    "definition": "A cookie is a small piece of data that a website stores on your browser. It helps websites remember your preferences, login status, and browsing activity. While useful, cookies can also be used to track you across the internet.",
+    "example": "When you log into Flipkart and your cart is still there next time you visit — that's cookies at work.",
+    "tips": [
+      "Clear cookies regularly for better privacy.",
+      "Use browser settings to block third-party tracking cookies.",
+      "Be cautious when accepting all cookies on websites."
+    ]
+  },
+  {
+    "term": "Cryptography",
+    "slug": "cryptography",
+    "letter": "C",
+    "preview": "The science of encrypting data so only intended recipients can read it.",
+    "definition": "Cryptography is the practice of securing information by transforming it into an unreadable format using algorithms and keys. Only someone with the correct key can decode and read the original message.",
+    "example": "When you send a WhatsApp message, it is encrypted end-to-end — meaning only you and the receiver can read it, not even WhatsApp.",
+    "tips": [
+      "Always use apps and websites that offer end-to-end encryption.",
+      "Avoid sharing sensitive data on unencrypted HTTP websites.",
+      "Use encrypted email services like ProtonMail for sensitive communication."
+    ]
+  },
+  {
+    "term": "Cyber Slavery",
+    "slug": "cyber-slavery",
+    "letter": "C",
+    "preview": "Victims are trafficked and forced to conduct online scams against their will.",
+    "definition": "Cyber slavery is a form of human trafficking where victims — often lured with fake job offers — are taken to foreign countries and forced to work in scam call centers. They are made to run romance scams, investment frauds, and crypto scams targeting people globally, under threat of violence.",
+    "example": "Over 5,000 Indians have been rescued from cyber slavery compounds in Myanmar, Cambodia, and Laos after being trafficked with promises of data entry and customer service jobs paying Rs 50,000+ per month.",
+    "tips": [
+      "Never accept job offers abroad that promise very high salaries for simple computer work.",
+      "If you suspect you or someone is being trafficked, contact Anti-Trafficking Helpline: 1800-419-8588.",
+      "Report cyber slavery to cybercrime.gov.in or the Indian Embassy in the country."
+    ]
+  },
+  {
+    "term": "DDoS Attack",
+    "slug": "ddos-attack",
+    "letter": "D",
+    "preview": "Flooding a server with traffic to make a website crash or go offline.",
+    "definition": "A Distributed Denial of Service (DDoS) attack is when a hacker uses thousands of computers to flood a website or server with so much traffic that it crashes and becomes unavailable to real users.",
+    "example": "In 2012, Indian government websites were taken down by hackers using DDoS attacks as a form of protest — real users could not access any services for hours.",
+    "tips": [
+      "If you run a website, use a CDN like Cloudflare for DDoS protection.",
+      "Monitor your server traffic for unusual spikes.",
+      "Have an incident response plan ready if your service is attacked."
+    ]
+  },
+  {
+    "term": "Dark Web",
+    "slug": "dark-web",
+    "letter": "D",
+    "preview": "A hidden part of the internet not indexed by regular search engines.",
+    "definition": "The dark web is a part of the internet that is not accessible through regular browsers like Chrome or Firefox. It requires special software like Tor to access. While it has legitimate uses, it is also known for illegal activities like selling stolen data.",
+    "example": "After a major data breach, stolen Aadhaar numbers and bank details are sometimes found being sold on dark web marketplaces.",
+    "tips": [
+      "Never access the dark web out of curiosity — it is dangerous.",
+      "Monitor if your email has been part of a data breach using HaveIBeenPwned.",
+      "If your data appears on the dark web, change all passwords immediately."
+    ]
+  },
+  {
+    "term": "Deepfake",
+    "slug": "deepfake",
+    "letter": "D",
+    "preview": "AI-generated fake videos or audio that make it look like someone said or did something they never did.",
+    "definition": "A deepfake is synthetic media created using artificial intelligence that convincingly replaces a person's face, voice, or actions in a video or audio clip. Deepfakes are increasingly used for fraud, misinformation, revenge, and impersonating public figures or relatives to extort money.",
+    "example": "A man in Kerala received a video call from someone who looked and sounded exactly like his friend asking for urgent money transfer. It was an AI deepfake created using his friend's social media videos — he lost Rs 40,000.",
+    "tips": [
+      "Be suspicious of unexpected video calls asking for money, even from known faces.",
+      "Verify by calling back on a different number or asking a personal question only they would know.",
+      "Report deepfake fraud to cybercrime.gov.in or call 1930."
+    ]
+  },
+  {
+    "term": "Digital Arrest",
+    "slug": "digital-arrest",
+    "letter": "D",
+    "preview": "A fake scam where fraudsters impersonate police or CBI to trap victims online.",
+    "definition": "Digital Arrest is not a real legal concept — it is a scam where cybercriminals pose as police officers, CBI, ED, or TRAI officials and call victims claiming they are under 'digital arrest' for crimes like money laundering or drug trafficking. They force victims to stay on video call for hours or days and extort money, threatening fake legal action.",
+    "example": "A retired teacher from Lucknow received a WhatsApp video call from someone posing as a CBI officer. He was told he was under 'digital arrest' for a parcel containing drugs sent in his name. Terrified, he transferred Rs 45 lakhs over 3 days before realizing it was a scam.",
+    "tips": [
+      "No government agency in India conducts arrests over video call — this is always a scam.",
+      "Immediately hang up and call the real police at 1930 (Cybercrime Helpline).",
+      "Never transfer money to anyone claiming to be a government official on a call."
+    ]
+  },
+  {
+    "term": "Encryption",
+    "slug": "encryption",
+    "letter": "E",
+    "preview": "Converting data into a coded format that only authorized users can read.",
+    "definition": "Encryption is the process of converting readable data into an unreadable scrambled format using an algorithm. Only someone with the correct decryption key can convert it back to readable form. It protects data in transit and at rest.",
+    "example": "When you pay via UPI, your transaction details are encrypted so that even if someone intercepts the data, they cannot read your account information.",
+    "tips": [
+      "Always check for HTTPS in the URL before entering sensitive data.",
+      "Encrypt sensitive files on your computer using built-in tools.",
+      "Use encrypted messaging apps like Signal for private conversations."
+    ]
+  },
+  {
+    "term": "Exploit",
+    "slug": "exploit",
+    "letter": "E",
+    "preview": "A piece of code that takes advantage of a software vulnerability.",
+    "definition": "An exploit is a piece of software, code, or technique used by hackers to take advantage of a bug or vulnerability in a program. Exploits can give attackers unauthorized access to systems or allow them to run malicious code.",
+    "example": "The WannaCry ransomware used an exploit called EternalBlue to attack Windows computers that had not installed a critical security update.",
+    "tips": [
+      "Always install software updates and security patches immediately.",
+      "Remove software you no longer use — old software has more vulnerabilities.",
+      "Use a vulnerability scanner to check your systems regularly."
+    ]
+  },
+  {
+    "term": "Fake Customer Care",
+    "slug": "fake-customer-care",
+    "letter": "F",
+    "preview": "Fraudsters pose as bank or company customer care to steal your credentials.",
+    "definition": "Fake Customer Care fraud occurs when scammers create fake helpline numbers that appear in Google searches or send WhatsApp messages pretending to be customer support of banks, Amazon, Flipkart, or other services. When victims call, they are tricked into sharing OTPs, installing screen-sharing apps, or transferring money.",
+    "example": "A person searched 'Paytm customer care number' on Google and called the first result — a fake number placed there by scammers through SEO tricks. The 'agent' asked him to install AnyDesk for 'remote assistance' and emptied his wallet.",
+    "tips": [
+      "Always get customer care numbers from the official app or website — never from Google search.",
+      "Legitimate customer care will never ask you to install remote access apps like AnyDesk or TeamViewer.",
+      "If you are asked for OTP by customer support, hang up immediately — it is always a scam."
+    ]
+  },
+  {
+    "term": "Fingerprinting",
+    "slug": "fingerprinting",
+    "letter": "F",
+    "preview": "Tracking users online by collecting unique browser and device details.",
+    "definition": "Browser fingerprinting is a tracking technique where websites collect information about your browser, screen size, fonts, and settings to create a unique profile that identifies you — even without cookies.",
+    "example": "Even in incognito mode, advertisers can still track you using fingerprinting by combining your screen resolution, browser version, and installed fonts.",
+    "tips": [
+      "Use privacy-focused browsers like Firefox or Brave.",
+      "Install browser extensions like uBlock Origin to reduce fingerprinting.",
+      "Regularly update your browser to minimize unique identifiers."
+    ]
+  },
+  {
+    "term": "Firewall",
+    "slug": "firewall",
+    "letter": "F",
+    "preview": "A security system that monitors and controls incoming and outgoing network traffic.",
+    "definition": "A firewall is a network security system that monitors and controls incoming and outgoing network traffic based on predefined security rules. It acts as a barrier between a trusted internal network and untrusted external networks like the internet.",
+    "example": "Your home Wi-Fi router has a built-in firewall that blocks unknown devices from accessing your network without permission.",
+    "tips": [
+      "Always keep your firewall enabled on your computer and router.",
+      "Configure firewall rules to block unnecessary ports and services.",
+      "Use both hardware and software firewalls for better protection."
+    ]
+  },
+  {
+    "term": "HTTPS",
+    "slug": "https",
+    "letter": "H",
+    "preview": "A secure version of HTTP that encrypts data between browser and website.",
+    "definition": "HTTPS (HyperText Transfer Protocol Secure) is a secure communication protocol that encrypts data exchanged between your browser and a website using SSL/TLS. It protects your data from being intercepted by attackers.",
+    "example": "When you see a padlock icon in your browser and the URL starts with 'https://', your connection is encrypted and secure.",
+    "tips": [
+      "Never enter passwords or payment info on HTTP websites.",
+      "Look for the padlock icon before submitting any sensitive form.",
+      "Use browser extensions like HTTPS Everywhere to force secure connections."
+    ]
+  },
+  {
+    "term": "Hacking",
+    "slug": "hacking",
+    "letter": "H",
+    "preview": "Gaining unauthorized access to systems, networks, or data.",
+    "definition": "Hacking refers to the act of finding and exploiting weaknesses in computer systems or networks. It can be done with malicious intent (black hat), for security research (white hat), or somewhere in between (grey hat).",
+    "example": "Ethical hackers (white hats) are hired by companies like Infosys and TCS to find security vulnerabilities before criminals do.",
+    "tips": [
+      "Learn ethical hacking through certified courses like CEH or OSCP.",
+      "Never attempt to access systems without explicit permission.",
+      "Report vulnerabilities you find responsibly through bug bounty programs."
+    ]
+  },
+  {
+    "term": "Identity Theft",
+    "slug": "identity-theft",
+    "letter": "I",
+    "preview": "When someone steals your personal information to impersonate you.",
+    "definition": "Identity theft occurs when someone steals your personal information — like your Aadhaar number, PAN card, or bank details — and uses it to commit fraud, open accounts, or make purchases in your name.",
+    "example": "Fraudsters used stolen Aadhaar and PAN details to open fake bank accounts and take out loans in victims' names across India.",
+    "tips": [
+      "Monitor your credit score regularly for unknown accounts.",
+      "Never share your Aadhaar, PAN, or bank details over phone or email.",
+      "Report identity theft immediately to your bank and cybercrime portal (cybercrime.gov.in)."
+    ]
+  },
+  {
+    "term": "Job Scam",
+    "slug": "job-scam",
+    "letter": "J",
+    "preview": "Fake job offers used to steal money or personal data from job seekers.",
+    "definition": "Job scams involve fraudsters posting fake job listings or contacting people with attractive job offers — often work-from-home or abroad — to steal registration fees, personal documents, or banking details. Some scams also trap victims into illegal activities like crypto fraud or call center scams.",
+    "example": "Thousands of young Indians were lured to Myanmar, Cambodia and other countries with fake data entry job offers. Upon arrival, they were forced to work in cyber fraud call centers under threat of violence.",
+    "tips": [
+      "Never pay any fee to get a job — legitimate companies never ask for upfront payments.",
+      "Verify company details on official websites before sharing any documents.",
+      "Report suspicious job offers at cybercrime.gov.in or call 1930."
+    ]
+  },
+  {
+    "term": "Keylogger",
+    "slug": "keylogger",
+    "letter": "K",
+    "preview": "Malware that secretly records every key you press on your keyboard.",
+    "definition": "A keylogger is a type of malware that secretly records everything you type on your keyboard — including passwords, credit card numbers, and personal messages — and sends this data to a hacker.",
+    "example": "A keylogger installed on a cyber cafe computer secretly captured bank passwords of hundreds of customers who used that computer.",
+    "tips": [
+      "Avoid using public computers for sensitive tasks like banking.",
+      "Use on-screen keyboards for entering passwords in public.",
+      "Run regular malware scans to detect keyloggers on your device."
+    ]
+  },
+  {
+    "term": "Malware",
+    "slug": "malware",
+    "letter": "M",
+    "preview": "Any software designed to harm, hack, or gain unauthorized access to a system.",
+    "definition": "Malware is a broad term for any malicious software designed to damage, disrupt, or gain unauthorized access to a computer system. It includes viruses, worms, ransomware, spyware, and trojans.",
+    "example": "The AIIMS Delhi ransomware attack in 2022 was caused by malware that encrypted hospital data and demanded crores in ransom.",
+    "tips": [
+      "Download software only from official sources and trusted app stores.",
+      "Keep all software and operating systems updated.",
+      "Use a reputable antivirus and run regular scans."
+    ]
+  },
+  {
+    "term": "Man-in-the-Middle",
+    "slug": "man-in-the-middle",
+    "letter": "M",
+    "preview": "An attack where a hacker secretly intercepts communication between two parties.",
+    "definition": "A Man-in-the-Middle (MitM) attack happens when an attacker secretly positions themselves between two communicating parties — intercepting, reading, and potentially modifying the data being exchanged without either party knowing.",
+    "example": "On a fake public Wi-Fi at a coffee shop, a hacker intercepts your connection to your bank — reading your login credentials in real time.",
+    "tips": [
+      "Avoid using public Wi-Fi for sensitive activities like banking.",
+      "Always use a VPN when on public networks.",
+      "Look for HTTPS and valid SSL certificates before entering any data."
+    ]
+  },
+  {
+    "term": "OTP Fraud",
+    "slug": "otp-fraud",
+    "letter": "O",
+    "preview": "Scams where fraudsters trick you into sharing your one-time password.",
+    "definition": "OTP (One-Time Password) fraud is a social engineering attack where scammers impersonate banks, government officials, or customer support agents to trick you into sharing your OTP — giving them access to your accounts.",
+    "example": "A caller pretending to be from SBI said your KYC will expire and asked for your OTP. The moment you share it, they drain your account.",
+    "tips": [
+      "Never share your OTP with anyone — banks never ask for it.",
+      "Hang up immediately if someone asks for your OTP over phone.",
+      "Report OTP fraud to your bank and cybercrime.gov.in immediately."
+    ]
+  },
+  {
+    "term": "Phishing",
+    "slug": "phishing",
+    "letter": "P",
+    "preview": "Tricking users into revealing passwords or info via fake emails or websites.",
+    "definition": "Phishing is a type of social engineering attack where cybercriminals send fake emails, messages, or create fake websites that appear to be from legitimate organizations to steal sensitive information like passwords, credit card numbers, or OTPs.",
+    "example": "You receive an email that looks exactly like it's from HDFC Bank saying your account will be blocked. You click the link, enter your credentials — but it was a fake website created by hackers.",
+    "tips": [
+      "Always check the sender's email address carefully before clicking any link.",
+      "Never click links in unsolicited emails — go directly to the official website.",
+      "Use email services with built-in phishing detection like Gmail."
+    ]
+  },
+  {
+    "term": "Pig Butchering Scam",
+    "slug": "pig-butchering-scam",
+    "letter": "P",
+    "preview": "A long-term romance or investment scam where fraudsters build trust before stealing money.",
+    "definition": "Pig Butchering is a sophisticated scam where fraudsters slowly build a romantic or friendly relationship with victims over weeks or months, then convince them to invest in fake cryptocurrency or trading platforms. Once the victim has invested a large amount, the scammer disappears with all the money.",
+    "example": "A Bengaluru IT professional was contacted on Instagram by an attractive profile claiming to be a successful investor in Singapore. After 2 months of daily chatting, she convinced him to invest Rs 85 lakhs in a crypto platform — the platform vanished overnight.",
+    "tips": [
+      "Be very suspicious of strangers online who quickly become close and then discuss investments.",
+      "Never invest in platforms recommended by someone you only know online.",
+      "Verify any investment platform's registration with SEBI at sebi.gov.in."
+    ]
+  },
+  {
+    "term": "QR Code Scam",
+    "slug": "qr-code-scam",
+    "letter": "Q",
+    "preview": "Fake QR codes that trick you into sending money instead of receiving it.",
+    "definition": "QR Code scams involve fraudsters sending malicious QR codes that initiate a payment debit instead of a credit, or redirect to phishing websites that steal banking credentials. Scammers often pose as buyers on OLX/Quikr or customer support agents.",
+    "example": "A woman selling a saree on OLX was told by the buyer to scan a QR code to receive payment. Each time she scanned it, Rs 10,000 was debited from her account. She was scammed three times before realizing what was happening.",
+    "tips": [
+      "Scanning a QR code to receive money is always a scam — you only scan to pay.",
+      "Never scan QR codes sent by strangers on WhatsApp, email or messaging apps.",
+      "If a QR code asks for your UPI PIN, stop immediately and report it."
+    ]
+  },
+  {
+    "term": "Ransomware",
+    "slug": "ransomware",
+    "letter": "R",
+    "preview": "Malware that locks your files and demands payment to restore access.",
+    "definition": "Ransomware is a type of malware that encrypts your files and demands a ransom payment — usually in cryptocurrency — in exchange for the decryption key. It can target individuals, hospitals, banks, and even government systems.",
+    "example": "In 2022, AIIMS Delhi was hit by ransomware that locked critical patient data, disrupting hospital services for weeks and demanding crores in ransom.",
+    "tips": [
+      "Take regular backups of important data — offline and cloud both.",
+      "Never open email attachments from unknown senders.",
+      "Keep all software patched and updated to prevent exploits."
+    ]
+  },
+  {
+    "term": "SIM Swap Attack",
+    "slug": "sim-swap-attack",
+    "letter": "S",
+    "preview": "Hackers port your mobile number to a new SIM to intercept your OTPs.",
+    "definition": "A SIM Swap attack is when a fraudster tricks your mobile carrier into transferring your phone number to a SIM card they control. Once they have your number, they can intercept all OTPs sent to your phone and access your bank accounts, email, and any service linked to your mobile number.",
+    "example": "A Mumbai businessman lost Rs 1.86 crore after fraudsters used fake documents to get his Airtel number ported to a new SIM. Within minutes, they intercepted OTPs and emptied his bank accounts.",
+    "tips": [
+      "Immediately contact your carrier if your phone loses network signal unexpectedly.",
+      "Set up a SIM lock or port protection with your mobile operator.",
+      "Use authenticator apps instead of SMS OTPs wherever possible."
+    ]
+  },
+  {
+    "term": "Smishing",
+    "slug": "smishing",
+    "letter": "S",
+    "preview": "SMS phishing — fraudulent text messages designed to steal your information.",
+    "definition": "Smishing (SMS Phishing) is a phishing attack delivered via SMS or messaging apps like WhatsApp. Fraudsters send fake messages pretending to be from banks, government, delivery companies, or e-commerce platforms with malicious links or fake numbers to call.",
+    "example": "You receive an SMS: 'Your SBI KYC is expiring today. Click here to update immediately or your account will be blocked: bit.ly/sbi-kyc'. The link leads to a fake SBI website that steals your login credentials.",
+    "tips": [
+      "Never click links in SMS messages — go directly to the official website.",
+      "Banks and government agencies never ask for KYC updates via SMS links.",
+      "Report suspicious SMS to 1909 (DND registry) or forward to 7726 (SPAM)."
+    ]
+  },
+  {
+    "term": "Social Engineering",
+    "slug": "social-engineering",
+    "letter": "S",
+    "preview": "Manipulating people psychologically to give up confidential information.",
+    "definition": "Social engineering is a manipulation technique that exploits human psychology rather than technical vulnerabilities. Attackers trick people into revealing confidential information or performing actions that compromise security.",
+    "example": "A scammer calls pretending to be from TRAI saying your phone number will be blocked for illegal activity, and pressures you to share personal details or transfer money.",
+    "tips": [
+      "Be skeptical of unsolicited calls, emails, or messages asking for information.",
+      "Verify the identity of anyone asking for sensitive information.",
+      "When in doubt, hang up and call the official number yourself."
+    ]
+  },
+  {
+    "term": "Spyware",
+    "slug": "spyware",
+    "letter": "S",
+    "preview": "Software that secretly collects your data and sends it to attackers.",
+    "definition": "Spyware is a type of malware that secretly monitors your activity, collects personal information, and sends it to a third party without your knowledge or consent. It can track browsing habits, capture keystrokes, and steal passwords.",
+    "example": "Pegasus spyware, used against Indian journalists and activists, secretly accessed their phone cameras, microphones, and messages without any sign of infection.",
+    "tips": [
+      "Only install apps from official app stores.",
+      "Check app permissions before granting access to camera or microphone.",
+      "Use mobile security software that detects spyware."
+    ]
+  },
+  {
+    "term": "Two-Factor Authentication",
+    "slug": "two-factor-authentication",
+    "letter": "T",
+    "preview": "A second layer of security beyond just your password to verify identity.",
+    "definition": "Two-Factor Authentication (2FA) is a security process that requires two separate forms of verification to access an account — typically something you know (password) and something you have (OTP, authenticator app, or hardware key).",
+    "example": "When you log into Gmail with your password and then enter a 6-digit code from Google Authenticator — that's 2FA protecting your account.",
+    "tips": [
+      "Enable 2FA on all important accounts — email, banking, social media.",
+      "Use an authenticator app (like Google Authenticator) instead of SMS when possible.",
+      "Store your 2FA backup codes in a safe place."
+    ]
+  },
+  {
+    "term": "UPI Fraud",
+    "slug": "upi-fraud",
+    "letter": "U",
+    "preview": "Scams that trick you into sending money or approving requests on UPI apps.",
+    "definition": "UPI Fraud refers to various scams targeting UPI payment users. Common methods include sending collect requests disguised as refunds, creating fake UPI IDs that look like real businesses, QR code scams where scanning causes money to be debited, and SIM swap attacks to take over UPI accounts.",
+    "example": "A man trying to sell his old phone on OLX received a 'payment request' on Google Pay from the buyer saying it was to verify his account. He approved it thinking money was coming in — but Rs 15,000 was instantly debited from his account.",
+    "tips": [
+      "Remember — receiving money on UPI never requires entering your PIN.",
+      "Never scan a QR code sent by a stranger to 'receive' payment.",
+      "Report UPI fraud immediately on your bank app or call 1930."
+    ]
+  },
+  {
+    "term": "VPN",
+    "slug": "vpn",
+    "letter": "V",
+    "preview": "Creates an encrypted tunnel for your internet traffic, hiding your identity.",
+    "definition": "A Virtual Private Network (VPN) creates an encrypted connection between your device and a server, masking your IP address and making your online activity private. It protects your data on public networks and can bypass geo-restrictions.",
+    "example": "When using airport Wi-Fi, a VPN encrypts all your internet traffic — so even if a hacker intercepts your connection, they only see gibberish.",
+    "tips": [
+      "Use a trusted paid VPN — free VPNs often sell your data.",
+      "Always enable VPN when using public Wi-Fi networks.",
+      "A VPN is not complete anonymity — combine with good security practices."
+    ]
+  },
+  {
+    "term": "Vishing",
+    "slug": "vishing",
+    "letter": "V",
+    "preview": "Voice phishing — scams conducted over phone calls to steal your information.",
+    "definition": "Vishing (Voice Phishing) is a social engineering attack conducted over phone calls where scammers impersonate banks, government agencies, telecom companies, or tech support to steal personal information, OTPs, or money from victims.",
+    "example": "You receive a call from someone claiming to be from HDFC Bank saying your credit card was used fraudulently. They ask for your card number, CVV and OTP to 'block the transaction' — but they use it to make real fraudulent transactions.",
+    "tips": [
+      "Banks never ask for your card number, CVV, or OTP over the phone.",
+      "Hang up and call your bank directly using the number on their official website.",
+      "Register on the DND registry to reduce unsolicited calls."
+    ]
+  },
+  {
+    "term": "Vulnerability",
+    "slug": "vulnerability",
+    "letter": "V",
+    "preview": "A weakness in software or hardware that can be exploited by attackers.",
+    "definition": "A vulnerability is a flaw or weakness in a system, software, or network that can be exploited by attackers to gain unauthorized access, steal data, or cause damage. Vulnerabilities can exist in code, configuration, or design.",
+    "example": "The Log4Shell vulnerability in 2021 affected millions of servers worldwide including Indian government systems, allowing hackers to execute malicious code remotely.",
+    "tips": [
+      "Always apply security patches and updates immediately.",
+      "Follow CVE databases to stay updated on new vulnerabilities.",
+      "Use vulnerability scanning tools to audit your own systems."
+    ]
+  },
+  {
+    "term": "Zero-Day",
+    "slug": "zero-day",
+    "letter": "Z",
+    "preview": "A vulnerability that is unknown to the software vendor and has no fix yet.",
+    "definition": "A zero-day vulnerability is a security flaw that is unknown to the software developer and therefore has no patch available. Hackers exploit zero-days before developers even know the vulnerability exists, making them extremely dangerous.",
+    "example": "The Pegasus spyware exploited zero-day vulnerabilities in iPhones to silently install itself without any user interaction — just receiving a message was enough.",
+    "tips": [
+      "Keep all software updated — patches fix previously unknown zero-days.",
+      "Use security software that can detect unusual behavior even without known signatures.",
+      "Follow cybersecurity news to stay aware of newly discovered zero-days."
+    ]
+  }
+]
