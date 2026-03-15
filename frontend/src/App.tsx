@@ -7,6 +7,7 @@ import Contact from "./pages/Contact";
 import Dictionary from "./pages/Dictionary";
 import DictionaryDetail from "./pages/DictionaryDetail";
 import CaseStudies from "./pages/CaseStudies";
+import SecurityExplained from "./pages/SecurityExplained";
 import NotFound from "./pages/NotFound";
 import ComingSoon from "./pages/Join";
 
@@ -33,7 +34,9 @@ const router = createBrowserRouter([
       { path: "dictionary", element: <Dictionary /> },
       { path: "dictionary/:slug", element: <DictionaryDetail /> },
       { path: "case-studies", element: <CaseStudies /> },
+      { path: "security-explained", element: <SecurityExplained /> },
       { path: "coming-soon", element: <ComingSoon /> },
+      { path: "join", element: <ComingSoon /> },
       { path: "*", element: <NotFound /> },
     ],
   },
