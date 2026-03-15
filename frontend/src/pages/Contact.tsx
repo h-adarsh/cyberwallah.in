@@ -10,8 +10,8 @@ export default function Contact() {
           <span className="text-3xl">&#128222;</span>
           <div>
             <h3 className="text-lg font-semibold mb-1">Phone</h3>
-            <a href="tel:+915678943208" className="text-blue-400 hover:text-blue-300 transition-colors">
-              +91 5678943208
+            <a href="tel:+919836225179" className="text-blue-400 hover:text-blue-300 transition-colors">
+              +91 98362 25179
             </a>
           </div>
         </div>
@@ -19,8 +19,8 @@ export default function Contact() {
           <span className="text-3xl">&#9993;</span>
           <div>
             <h3 className="text-lg font-semibold mb-1">Email</h3>
-            <a href="mailto:johndoe@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors">
-              johndoe@gmail.com
+            <a href="mailto:suryabhushan.singh@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors">
+              suryabhushan.singh@gmail.com
             </a>
           </div>
         </div>
