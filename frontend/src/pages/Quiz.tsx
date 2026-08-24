@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useAuth } from "../context/AuthProvider";
+import { quizService } from "@backend/services";
 
 const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL as string;
 
@@ -108,12 +110,25 @@ const questions = [
 type Stage = "quiz" | "results" | "form" | "success";
 
 export default function Quiz() {
+  const { user, profile } = useAuth();
   const [stage, setStage] = useState<Stage>("quiz");
   const [current, setCurrent] = useState(0);
   const [selected, setSelected] = useState<(number | null)[]>(Array(questions.length).fill(null));
   const [feedback, setFeedback] = useState({ name: "", email: "", age: "", phone: "", location: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+
+  // Prefill the feedback form from the signed-in user's profile.
+  useEffect(() => {
+    if (!user) return;
+    setFeedback((f) => ({
+      ...f,
+      name: f.name || profile?.full_name || "",
+      email: f.email || user.email || "",
+      age: f.age || (profile?.age != null ? String(profile.age) : ""),
+      location: f.location || profile?.location || "",
+    }));
+  }, [user, profile]);
 
   const score = selected.filter((ans, idx) => ans === questions[idx].answer).length;
   const percentage = Math.round((score / questions.length) * 100);
@@ -159,6 +174,17 @@ export default function Quiz() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
+
+      // Also persist to the user's account when signed in (with per-question answers).
+      if (user) {
+        const { error } = await quizService.saveResult(user.id, {
+          score,
+          total: questions.length,
+          answers: selected,
+        });
+        if (error) console.error("[quiz] failed to save result:", error);
+      }
+
       setStage("success");
     } catch {
       setSubmitError("Unable to submit right now. Please try again.");
@@ -172,12 +198,19 @@ export default function Quiz() {
     return (
       <section className="max-w-xl mx-auto px-6 py-20 text-center">
         <div className="text-5xl mb-6">&#127881;</div>
-        <h2 className="text-3xl font-bold mb-3">Welcome, {feedback.name}!</h2>
-        <p className="text-gray-400 mb-2">
-          You scored <span className="text-white font-semibold">{score}/{questions.length}</span> on the quiz.
+        <h2 className="font-display text-3xl font-bold mb-3 text-[var(--color-text-primary)]">
+          Welcome, {feedback.name}!
+        </h2>
+        <p className="text-[var(--color-text-muted)] mb-2">
+          You scored{" "}
+          <span className="font-semibold text-[var(--color-text-primary)]">
+            {score}/{questions.length}
+          </span>{" "}
+          on the quiz.
         </p>
-        <p className="text-gray-500 text-sm">
-          We'll be in touch at <span className="text-blue-400">{feedback.email}</span>.
+        <p className="text-[var(--color-text-dim)] text-sm">
+          We'll be in touch at{" "}
+          <span className="text-[var(--color-electric-400)]">{feedback.email}</span>.
         </p>
       </section>
     );
@@ -188,13 +221,22 @@ export default function Quiz() {
     const allFilled = feedback.name && feedback.email && feedback.age && feedback.location;
     return (
       <section className="max-w-xl mx-auto px-6 py-16">
-        <div className="mb-8 p-4 bg-[#111] border border-white/5 rounded-2xl text-center">
-          <p className="text-gray-400 text-sm mb-1">Your Score</p>
-          <p className="text-3xl font-bold">{score} <span className="text-gray-500 text-xl font-normal">/ {questions.length}</span></p>
-          <p className="text-gray-400 text-sm mt-1">{percentage}% — {score >= 8 ? "Excellent work!" : score >= 5 ? "Good effort!" : "Keep learning!"}</p>
+        <div className="glass mb-8 rounded-2xl border border-[var(--color-border-subtle)] p-4 text-center">
+          <p className="text-[var(--color-text-muted)] text-sm mb-1">Your Score</p>
+          <p className="font-display text-3xl font-bold text-[var(--color-text-primary)]">
+            {score}{" "}
+            <span className="text-xl font-normal text-[var(--color-text-dim)]">/ {questions.length}</span>
+          </p>
+          <p className="text-[var(--color-text-muted)] text-sm mt-1">
+            {percentage}% — {score >= 8 ? "Excellent work!" : score >= 5 ? "Good effort!" : "Keep learning!"}
+          </p>
         </div>
-        <h2 className="text-3xl font-bold mb-2">Share Feedback</h2>
-        <p className="text-gray-500 mb-8 text-sm">Share your details and let us know how you did.</p>
+        <h2 className="font-display text-3xl font-bold mb-2 text-[var(--color-text-primary)]">
+          Share Feedback
+        </h2>
+        <p className="text-[var(--color-text-dim)] mb-8 text-sm">
+          Share your details and let us know how you did.
+        </p>
         <form onSubmit={handleFeedbackSubmit} className="grid gap-4">
           {[
             { label: "Full Name", id: "name", type: "text", placeholder: "Your name", required: true },
@@ -204,7 +246,7 @@ export default function Quiz() {
             { label: "Where are you from?", id: "location", type: "text", placeholder: "City, State", required: true },
           ].map(({ label, id, type, placeholder, required }) => (
             <div key={id} className="flex flex-col gap-1.5">
-              <label htmlFor={id} className="text-sm text-gray-400">{label}</label>
+              <label htmlFor={id} className="text-sm text-[var(--color-text-secondary)]">{label}</label>
               <input
                 id={id}
                 type={type}
@@ -212,15 +254,15 @@ export default function Quiz() {
                 required={required}
                 value={feedback[id as keyof typeof feedback]}
                 onChange={(e) => setFeedback({ ...feedback, [id]: e.target.value })}
-                className="w-full bg-[#141414] border border-white/10 focus:border-blue-500 rounded-xl px-4 py-3 text-white placeholder-gray-600 text-sm outline-none transition-colors"
+                className="w-full rounded-xl border border-[var(--color-border-subtle)] bg-[var(--color-bg-elevated)] px-4 py-3 text-sm text-[var(--color-text-primary)] placeholder-[var(--color-text-dim)] outline-none transition-all focus:border-[var(--color-electric-500)] focus:shadow-[var(--shadow-glow-sm)]"
               />
             </div>
           ))}
-          {submitError && <p className="text-red-400 text-sm">{submitError}</p>}
+          {submitError && <p className="text-[var(--color-danger)] text-sm">{submitError}</p>}
           <button
             type="submit"
             disabled={!allFilled || isSubmitting}
-            className="w-full mt-2 py-3 bg-blue-600 hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-white font-semibold rounded-xl"
+            className="mt-2 w-full rounded-xl bg-gradient-primary py-3 font-semibold text-white transition-all hover:shadow-[var(--shadow-glow-md)] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:shadow-none"
           >
             {isSubmitting ? "Submitting..." : "Submit Feedback →"}
           </button>
@@ -234,17 +276,21 @@ export default function Quiz() {
     return (
       <section className="max-w-2xl mx-auto px-6 py-20 text-center">
         <div className="text-6xl mb-6">{score >= 8 ? "🎉" : score >= 5 ? "👍" : "😅"}</div>
-        <h2 className="text-4xl font-bold mb-3">{score} / {questions.length} Correct</h2>
-        <p className="text-gray-400 text-lg mb-10">{percentage}% — {score >= 8 ? "Excellent work!" : score >= 5 ? "Good effort!" : "Keep learning!"}</p>
+        <h2 className="font-display text-4xl font-bold mb-3 text-[var(--color-text-primary)]">
+          {score} / {questions.length} Correct
+        </h2>
+        <p className="text-[var(--color-text-muted)] text-lg mb-10">
+          {percentage}% — {score >= 8 ? "Excellent work!" : score >= 5 ? "Good effort!" : "Keep learning!"}
+        </p>
         <div className="space-y-3 text-left mb-10">
           {questions.map((q, idx) => (
-            <div key={idx} className="bg-[#111] border border-white/5 rounded-2xl p-5">
-              <p className="text-sm text-gray-400 mb-1">Q{idx + 1}. {q.question}</p>
+            <div key={idx} className="glass rounded-2xl border border-[var(--color-border-subtle)] p-5">
+              <p className="text-sm text-[var(--color-text-muted)] mb-1">Q{idx + 1}. {q.question}</p>
               {selected[idx] === q.answer ? (
-                <p className="text-green-400 text-sm font-medium">&#10003; Correct</p>
+                <p className="text-[var(--color-electric-400)] text-sm font-medium">&#10003; Correct</p>
               ) : (
-                <p className="text-red-400 text-sm font-medium">
-                  &#10007; Incorrect — <span className="text-gray-300">{q.options[q.answer]}</span>
+                <p className="text-[var(--color-danger)] text-sm font-medium">
+                  &#10007; Incorrect — <span className="text-[var(--color-text-secondary)]">{q.options[q.answer]}</span>
                 </p>
               )}
             </div>
@@ -253,13 +299,13 @@ export default function Quiz() {
         <div className="flex gap-3 justify-center">
           <button
             onClick={() => setStage("form")}
-            className="bg-blue-600 hover:bg-blue-500 transition-colors text-white font-semibold px-8 py-3 rounded-xl"
+            className="rounded-xl bg-gradient-primary px-8 py-3 font-semibold text-white transition-all hover:shadow-[var(--shadow-glow-md)]"
           >
             Share Feedback →
           </button>
           <button
             onClick={() => { setCurrent(0); setSelected(Array(questions.length).fill(null)); setStage("quiz"); }}
-            className="bg-white/10 hover:bg-white/20 transition-colors text-white font-semibold px-8 py-3 rounded-xl"
+            className="glass rounded-xl border border-[var(--color-border-default)] px-8 py-3 font-semibold text-[var(--color-text-secondary)] transition-all hover:border-[var(--color-border-strong)] hover:text-[var(--color-text-primary)]"
           >
             Retry Quiz
           </button>
@@ -273,21 +319,21 @@ export default function Quiz() {
   return (
     <section className="max-w-2xl mx-auto px-6 py-16">
       <div className="flex items-center justify-between mb-4">
-        <span className="text-gray-500 text-sm">Question {current + 1} of {questions.length}</span>
-        <span className="text-blue-400 text-sm font-medium">
+        <span className="text-[var(--color-text-dim)] text-sm">Question {current + 1} of {questions.length}</span>
+        <span className="text-[var(--color-electric-400)] text-sm font-medium">
           {selected.filter((s) => s !== null).length} answered
         </span>
       </div>
-      <div className="w-full bg-white/5 rounded-full h-1.5 mb-8">
+      <div className="w-full rounded-full bg-[var(--color-electric-950)]/60 h-1.5 mb-8">
         <div
-          className="bg-blue-500 h-1.5 rounded-full transition-all duration-300"
+          className="bg-gradient-primary h-1.5 rounded-full transition-all duration-300"
           style={{ width: `${((current + 1) / questions.length) * 100}%` }}
         />
       </div>
 
-      <div className="bg-[#111] border border-white/5 rounded-2xl p-6 mb-6">
-        <p className="font-semibold text-white text-lg mb-6">
-          <span className="text-blue-400 mr-2">{current + 1}.</span>{q.question}
+      <div className="glass rounded-2xl border border-[var(--color-border-subtle)] p-6 mb-6">
+        <p className="font-semibold text-[var(--color-text-primary)] text-lg mb-6">
+          <span className="text-[var(--color-electric-400)] mr-2">{current + 1}.</span>{q.question}
         </p>
         <div className="space-y-2">
           {q.options.map((opt, oIdx) => (
@@ -296,11 +342,11 @@ export default function Quiz() {
               onClick={() => handleSelect(oIdx)}
               className={`w-full text-left px-4 py-3 rounded-xl text-sm transition-all border ${
                 selected[current] === oIdx
-                  ? "border-blue-500 bg-blue-950/40 text-white"
-                  : "border-white/10 bg-white/3 text-gray-400 hover:border-white/20 hover:text-white"
+                  ? "border-[var(--color-border-glow)] bg-[var(--color-electric-500)]/12 text-[var(--color-text-primary)] shadow-[var(--shadow-glow-sm)]"
+                  : "border-[var(--color-border-subtle)] bg-[var(--color-bg-elevated)]/40 text-[var(--color-text-muted)] hover:border-[var(--color-border-strong)] hover:text-[var(--color-text-primary)]"
               }`}
             >
-              <span className="text-gray-500 mr-3">{String.fromCharCode(65 + oIdx)}.</span>
+              <span className="text-[var(--color-text-dim)] mr-3">{String.fromCharCode(65 + oIdx)}.</span>
               {opt}
             </button>
           ))}
@@ -311,14 +357,14 @@ export default function Quiz() {
         <button
           onClick={handlePrev}
           disabled={current === 0}
-          className="px-6 py-2.5 bg-white/10 hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors text-white font-semibold rounded-xl text-sm"
+          className="glass rounded-xl border border-[var(--color-border-default)] px-6 py-2.5 text-sm font-semibold text-[var(--color-text-secondary)] transition-all hover:border-[var(--color-border-strong)] hover:text-[var(--color-text-primary)] disabled:cursor-not-allowed disabled:opacity-30"
         >
           ← Previous
         </button>
         <button
           onClick={handleNext}
           disabled={selected[current] === null}
-          className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed transition-colors text-white font-semibold rounded-xl text-sm"
+          className="rounded-xl bg-gradient-primary px-6 py-2.5 text-sm font-semibold text-white transition-all hover:shadow-[var(--shadow-glow-md)] disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:shadow-none"
         >
           {current < questions.length - 1 ? "Next →" : "Submit Quiz →"}
         </button>

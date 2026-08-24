@@ -26,12 +26,12 @@ export default function Dictionary() {
 
   return (
     <section className="max-w-[1400px] mx-auto px-16 py-16">
-      <div className="inline-flex items-center gap-2 bg-blue-950/60 border border-blue-800/50 rounded-full px-4 py-2 mb-6">
-        <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-        <span className="text-blue-300 text-sm">{dictionaryData.length}+ terms and growing</span>
+      <div className="inline-flex items-center gap-2 bg-[var(--color-electric-950)]/60 border border-[var(--color-border-default)] rounded-full px-4 py-2 mb-6">
+        <span className="w-2 h-2 rounded-full bg-[var(--color-electric-500)] animate-pulse" />
+        <span className="text-[var(--color-electric-300)] text-sm">{dictionaryData.length}+ terms and growing</span>
       </div>
-      <h1 className="text-5xl font-black mb-2">Cyber Dictionary</h1>
-      <p className="text-gray-500 text-lg mb-10">
+      <h1 className="font-display text-5xl font-black mb-2 text-[var(--color-text-primary)]">Cyber Dictionary</h1>
+      <p className="text-[var(--color-text-dim)] text-lg mb-10">
         Every cybersecurity term explained in plain, simple English.
       </p>
 
@@ -40,7 +40,7 @@ export default function Dictionary() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search terms... e.g. Phishing, VPN, Malware"
-        className="w-full max-w-xl bg-[#141414] border border-white/10 focus:border-blue-500 rounded-xl px-5 py-3 text-white placeholder-gray-600 text-sm outline-none transition-colors mb-8"
+        className="w-full max-w-xl bg-[var(--color-bg-elevated)] border border-[var(--color-border-subtle)] focus:border-[var(--color-electric-500)] focus:shadow-[var(--shadow-glow-sm)] rounded-xl px-5 py-3 text-[var(--color-text-primary)] placeholder-[var(--color-text-dim)] text-sm outline-none transition-all mb-8"
       />
 
       {!search && (
@@ -54,10 +54,10 @@ export default function Dictionary() {
                 onClick={() => hasData && setActiveLetter(letter)}
                 className={`w-9 h-9 rounded-lg text-sm font-bold transition-all ${
                   isActive
-                    ? "bg-blue-600 text-white border border-blue-600"
+                    ? "bg-gradient-primary text-white border border-transparent shadow-[var(--shadow-glow-sm)]"
                     : hasData
-                    ? "bg-[#141414] text-gray-400 border border-white/10 hover:border-blue-600/50 hover:text-white cursor-pointer"
-                    : "text-gray-700 border border-white/5 cursor-default"
+                    ? "bg-[var(--color-bg-elevated)] text-[var(--color-text-muted)] border border-[var(--color-border-subtle)] hover:border-[var(--color-border-strong)] hover:text-[var(--color-text-primary)] cursor-pointer"
+                    : "text-[var(--color-electric-800)] border border-[var(--color-border-subtle)] cursor-default"
                 }`}
               >
                 {letter}
@@ -67,7 +67,7 @@ export default function Dictionary() {
         </div>
       )}
 
-      <p className="text-gray-600 text-sm mb-6">
+      <p className="text-[var(--color-text-dim)] text-sm mb-6">
         {search
           ? `${filtered.length} result${filtered.length !== 1 ? "s" : ""} for "${search}"`
           : `${filtered.length} term${filtered.length !== 1 ? "s" : ""} under "${activeLetter}"`}
@@ -87,8 +87,8 @@ export default function Dictionary() {
       ) : (
         <div className="text-center py-20">
           <p className="text-4xl mb-4">🔍</p>
-          <p className="text-gray-400 text-lg">No terms found.</p>
-          <p className="text-gray-600 text-sm mt-2">Try a different search or letter.</p>
+          <p className="text-[var(--color-text-muted)] text-lg">No terms found.</p>
+          <p className="text-[var(--color-text-dim)] text-sm mt-2">Try a different search or letter.</p>
         </div>
       )}
     </section>

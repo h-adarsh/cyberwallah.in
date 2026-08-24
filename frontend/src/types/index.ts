@@ -39,3 +39,31 @@ export interface LearnCard {
   title: string;
   description: string;
 }
+
+export interface BlogPost {
+  slug: string;
+  locale: "en" | "hi";
+  title: string;
+  description: string;
+  date: string;
+  tags: string[];
+  readTime: number;
+  published: boolean;
+}
+
+export interface Video {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  tags: string[];
+}
+
+export interface Resource {
+  name: string;
+  description: string;
+  url: string;
+  category: "VPN" | "Learning" | "Tools" | "Books" | "Practice";
+  affiliate: boolean;
+  free: boolean;
+}
